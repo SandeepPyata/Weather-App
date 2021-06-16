@@ -15,44 +15,49 @@
     <style>
         *:not(select,option){
             color: aliceblue;
+            font-size: medium;
         }
         body,html{
             height: 100%;
         }
-        .bg-img{
-            /* width: 100%; */
-            height: 100%;
-            background-image: url('https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-            background-size: cover;
+        #heading{
+            font-size: xx-large;
         }
+        .bg-img{
+            width: 100%;
+            height: 100%;
+            background-image: url('https://shandiinblog.files.wordpress.com/2018/03/dark-skies-4.jpg?w=1568');
+            background-size: cover;            
+        }
+        @media screen and (max-width:400px){
+            #city-img{
+                text-align: left;
+                width:250px;
+                height:250px;                
+            }
+
+        }
+        @media screen and (min-width:401px) and (max-width:640px){
+            #city-img{
+                text-align: left;
+                width:450px;
+                height:450px;                
+            }
+            #heading{
+                font-size: 20px;
+            }
+        }
+
     </style>
 
     <title>Weather App</title>
 </head>
 <body>
-    <!-- layout
-    
-        navbar - Weather app
-        middle - dropdown with cities
-
-        effects:
-        background change according to weather
-        animations throughout page
-
-        responsive page:
-            navbar
-            text
-    
-    -->
-
-    <!-- Background Image -->
-    <!-- <div id="bg-img"></div> -->
-    <!-- <img src="https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="#"> -->
     <!-- navbar -->
     <div class="container-fluid bg-img">
         <div class="container-fluid text-center">   
             <img id="icon1" class="img-fluid" src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon"> 
-            <span>Weather App</span>
+            <span id="heading">Weather App</span>
             <img id="icon2" class="img-fluid" src="http://openweathermap.org/img/wn/11d@2x.png" alt="icon">
         </div>
 
