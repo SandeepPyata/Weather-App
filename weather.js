@@ -35,19 +35,19 @@ function generate(){
 
             // City info
             document.getElementById('city-name').innerHTML = data.name;
-            document.getElementById('city-location').innerHTML = "<p><i>Longitude: </i>"+ data.coord.lon + "</p><p><i>Latitude: </i>" + data.coord.lat+"</p>";
+            document.getElementById('city-location').innerHTML = "<p><b><i>Longitude: </i></b>"+ data.coord.lon + "</p><p><b><i>Latitude: </i></b>" + data.coord.lat+"</p>";
             var image = cityImages[cityname];
             document.getElementById('city-img').innerHTML = `<img width=50% height=50% src=${image} alt="city image">`;
 
             // Weather Info
             document.getElementById('info').innerHTML = 
                 `<p><img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png" alt='weather_icon'></p>
-                <p><i>Temperature: </i>${String(data.main.temp-273).slice(0,4)} °C / ${data.main.temp} K</p>
-                <p><i>Pressure: </i>${data.main.pressure} hpa</p>
-                <p><i>Humidity: </i>${data.main.humidity} %</p>
-                <p><i>Wind Speed: </i>${data.wind.speed} m/s</p>
-                <p><i>Wind Direction: </i>${data.wind.deg}</p>
-                <p><i>Cloudiness: </i>${data.clouds.all} %</p>
+                <p><b><i>Temperature: </i></b>${String(data.main.temp-273).slice(0,4)} °C / ${data.main.temp} K</p>
+                <p><b><i>Pressure: </i></b>${data.main.pressure} hpa</p>
+                <p><b><i>Humidity: </i></b>${data.main.humidity} %</p>
+                <p><b><i>Wind Speed: </i></b>${data.wind.speed} m/s</p>
+                <p><b><i>Wind Direction: </i></b>${data.wind.deg}</p>
+                <p><b><i>Cloudiness: </i></b>${data.clouds.all} %</p>
                 `;
 
         }
