@@ -14,6 +14,8 @@
 
     <!-- icon for webpage -->
     <link rel="shortcut icon" href="https://cdn2.iconfinder.com/data/icons/weather-color-2/500/weather-05-256.png" type="image/x-icon">
+    <!-- Google translate -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
 
     <style>
         *:not(select,option,button){
@@ -29,6 +31,11 @@
             background-image: url('https://shandiinblog.files.wordpress.com/2018/03/dark-skies-4.jpg?w=1568');
             background-size: cover;            
         }
+        #heading{
+            font-size: x-large;
+            text-shadow: 0 0 3px yellow, 0 0 5px white;
+        }
+        /* Responsive Design */
         @media screen and (max-width:400px){
             #city-img{
                 text-align: left;
@@ -39,8 +46,15 @@
                 width:50px;
                 height:50px;
             }
-            #heading,.city,#report{
+            #drop-down{
+                width: fit-content;
+                height: 20px;
+            }
+            .city,#report,#info,#report>p,#city-name,#city-location{
                 font-size: 15px;
+            }
+            #heading{
+                font-size: large;
             }
         }
 
@@ -54,8 +68,8 @@
                 width:70px;
                 height:70px;
             }
-            #heading,.city,#report{
-                font-size: 18px;
+            .city,#report{
+                font-size: 15px;
             }
         }
         @media screen and (min-width:501px) and (max-width:640px){
@@ -64,26 +78,43 @@
                 width:450px;
                 height:450px;                
             }
-            #heading,.city,#report{
+            .city,#report{
                 font-size: 20px;
             }
+        }
+
+            /* Google Styling */
+        .translated-ltr{margin-top:-40px;}
+        .goog-te-banner-frame {display: none;margin-top:-20px;}
+        .goog-logo-link {display:none !important;} 
+        .goog-te-gadget{color: transparent !important;}
+        .goog-te-combo{          
+            /* float: right;   */
+            width: 130px;
+            padding: 2px; 
+            border: solid 1px #0077B0; 
+            outline: 0; 
+        }
+        /* Main box-size */
+        #google_translate_element{
+            float: right;
+            margin-top: 20px;
         }
     </style>
 
     <title>Weather App</title>
 </head>
-<body>
+<body id="bodysize">
     <!-- Header -->
     <div class="container-fluid bg-img">
-        <div class="container-fluid text-center">   
-            
+        <div class="container-fluid text-center">               
             <!-- Heading -->
             <img id="icon1" class="img-fluid" src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon"> 
-            <span id="heading">Weather App</span>
-            <img id="icon2" class="img-fluid" src="http://openweathermap.org/img/wn/11d@2x.png" alt="icon">
-            
+            <span id="heading" class="font-weight-bolder">Weather App</span>
+            <img id="icon2" class="img-fluid" src="http://openweathermap.org/img/wn/11d@2x.png" alt="icon">            
         </div>
-
+        
+        <div id="google_translate_element" onchange="changeLang()" class="container-fluid text-center" ></div>
 
         <div class="container-fluid">
             <div class="row">
@@ -122,7 +153,7 @@
 
                 <!-- Right side -->
                 <div id="report" class="col-6 text-center">                
-                    <p><b>Weather Info</b></p>
+                    <p>Weather Info</p>
                     <hr width="50%">
                     <p id="info"></p>
                 </div>
