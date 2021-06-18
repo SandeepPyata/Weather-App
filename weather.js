@@ -60,3 +60,9 @@ function generate(){
     };
     request.send();
 }
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,te,hi'
+    }, 'google_translate_element');
+}
